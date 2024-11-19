@@ -8,6 +8,7 @@
 
 .user-content-block {
     display: inline-flex;
+    row-gap: 20px;
     width: 275px;
     margin-inline: 8px;
     flex-direction: column;
