@@ -24,8 +24,15 @@ export default function App() {
 					console.error("Error fetching data:", error);
 					setLoading(false);
 				});
+			setOrdering(localStorage.getItem("ordering") || Ordering.T_ASC);
+			setGrouping(localStorage.getItem("grouping") || Grouping.STATUS);
 		}
-	}, [loading]); // Dependency on `loading`
+	}, [loading]);
+	
+	useEffect(() => {
+		localStorage.setItem("ordering", ordering);
+		localStorage.setItem("grouping", grouping);
+	}, [ordering, grouping]);
 
 	return (
 		<div className="home">

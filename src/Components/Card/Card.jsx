@@ -27,7 +27,6 @@ export default function Card({ grouping, details }) {
 					}
 					<div className="card-body-title">{details.title}</div>
 				</div>
-				
 				<div className="card-body-others">
 					{grouping != Grouping.PRIORITY ? (
 						<div className="card-body-box">
