@@ -1,0 +1,22 @@
+
+
+.user-content {
+    width: 100%;
+    padding-inline: 20px;
+    padding-block: 10px;
+}
+
+.user-content-block {
+    display: inline-flex;
+    width: 275px;
+    margin-inline: 8px;
+    flex-direction: column;
+}
+
+.profile-image {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+}
