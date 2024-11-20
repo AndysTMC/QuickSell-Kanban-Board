@@ -14,7 +14,7 @@ export default function Card({ grouping, details }) {
 							alt="profile"
 							className="card-profile-image"
 						/>
-						<div className={`card-header-profile-status-${details.status == "In progress" ? "yellow" : "gray"}`}></div>
+						<div className={`card-header-profile-status-${details.status === "In progress" ? "yellow" : "gray"}`}></div>
 					</div>
 				) : null}
 			</div>
@@ -30,7 +30,7 @@ export default function Card({ grouping, details }) {
 				<div className="card-body-others">
 					{grouping != Grouping.PRIORITY ? (
 						<div className="card-body-box">
-							{details.priority == 0 ? (
+							{details.priority === 0 ? (
 								<svg
 									width="16"
 									height="16"
@@ -55,7 +55,7 @@ export default function Card({ grouping, details }) {
 									/>
 								</svg>
 							) : null}
-							{details.priority == 1 ? (
+							{details.priority === 1 ? (
 								<svg
 									width="16"
 									height="16"
@@ -79,7 +79,7 @@ export default function Card({ grouping, details }) {
 									/>
 								</svg>
 							) : null}
-							{details.priority == 2 ? (
+							{details.priority === 2 ? (
 								<svg
 									width="16"
 									height="16"
@@ -102,7 +102,7 @@ export default function Card({ grouping, details }) {
 									/>
 								</svg>
 							) : null}
-							{details.priority == 3 ? (
+							{details.priority === 3 ? (
 								<svg
 									width="16"
 									height="16"
@@ -124,7 +124,7 @@ export default function Card({ grouping, details }) {
 									/>
 								</svg>
 							) : null}
-							{details.priority == 4 ? (
+							{details.priority === 4 ? (
 								<svg
 									width="16"
 									height="16"

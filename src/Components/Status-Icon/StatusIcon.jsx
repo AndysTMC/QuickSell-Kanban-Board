@@ -3,7 +3,7 @@
 export default function StatusIcon({ status }) {
 	return (
 		<div>
-			{status == "Backlog" ? (
+			{status === "Backlog" ? (
 				<svg
 					width="14"
 					height="14"
@@ -19,7 +19,7 @@ export default function StatusIcon({ status }) {
 					/>
 				</svg>
 			) : null}
-			{status == "Todo" ? (
+			{status === "Todo" ? (
 				<svg
 					width="14"
 					height="14"
@@ -34,7 +34,7 @@ export default function StatusIcon({ status }) {
 					/>
 				</svg>
 			) : null}
-			{status == "In progress" ? (
+			{status === "In progress" ? (
 				<svg
 					width="14"
 					height="14"
@@ -55,7 +55,7 @@ export default function StatusIcon({ status }) {
 					/>
 				</svg>
 			) : null}
-			{status == "Done" ? (
+			{status === "Done" ? (
 				<svg
 					width="14"
 					height="14"
@@ -81,7 +81,7 @@ export default function StatusIcon({ status }) {
 					/>
 				</svg>
 			) : null}
-			{status == "Cancelled" ? (
+			{status === "Cancelled" ? (
 				<svg
 					width="14"
 					height="14"

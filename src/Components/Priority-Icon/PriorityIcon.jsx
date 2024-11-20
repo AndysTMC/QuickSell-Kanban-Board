@@ -3,7 +3,7 @@
 export default function PriorityIcon({ priority }) {
 	return (
 		<div>
-			{priority == 0 ? (
+			{priority === 0 ? (
 				<svg
 					width="16"
 					height="16"
@@ -28,7 +28,7 @@ export default function PriorityIcon({ priority }) {
 					/>
 				</svg>
 			) : null}
-			{priority == 1 ? (
+			{priority === 1 ? (
 				<svg
 					width="16"
 					height="16"
@@ -52,7 +52,7 @@ export default function PriorityIcon({ priority }) {
 					/>
 				</svg>
 			) : null}
-			{priority == 2 ? (
+			{priority === 2 ? (
 				<svg
 					width="16"
 					height="16"
@@ -75,7 +75,7 @@ export default function PriorityIcon({ priority }) {
 					/>
 				</svg>
 			) : null}
-			{priority == 3 ? (
+			{priority === 3 ? (
 				<svg
 					width="16"
 					height="16"
@@ -97,7 +97,7 @@ export default function PriorityIcon({ priority }) {
 					/>
 				</svg>
 			) : null}
-			{priority == 4 ? (
+			{priority === 4 ? (
 				<svg
 					width="16"
 					height="16"

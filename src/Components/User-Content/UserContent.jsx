@@ -1,8 +1,5 @@
 import Card from "../Card/Card";
-import { Grouping } from "../../utils/structures";
-import PriorityIcon from "../Priority-Icon/PriorityIcon";
 import { sortTickets } from "../../utils/functions";
-import StatusIcon from "../Status-Icon/StatusIcon";
 import './user-content.css';
 
 export default function StatusContent({ data, ordering, grouping }) {

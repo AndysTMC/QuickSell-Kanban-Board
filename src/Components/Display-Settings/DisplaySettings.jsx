@@ -12,12 +12,12 @@ export default function DisplaySettings({ ordering, setOrdering, grouping, setGr
 	const [subSettings, setSubSettings] = useState(SubSettings.NOT_OPEN);
 
 	const handleGroupingClick = () => {
-		if (subSettings == SubSettings.GROUPING) setSubSettings(SubSettings.NOT_OPEN);
+		if (subSettings === SubSettings.GROUPING) setSubSettings(SubSettings.NOT_OPEN);
 		else setSubSettings(SubSettings.GROUPING);
 	}
 
 	const handleOrderingClick = () => {
-		if (subSettings == SubSettings.ORDERING) setSubSettings(SubSettings.NOT_OPEN);
+		if (subSettings === SubSettings.ORDERING) setSubSettings(SubSettings.NOT_OPEN);
 		else setSubSettings(SubSettings.ORDERING);
 	}
 
@@ -45,11 +45,11 @@ export default function DisplaySettings({ ordering, setOrdering, grouping, setGr
 							/>
 						</svg>
 					</button>
-					{subSettings == SubSettings.GROUPING ? (
+					{subSettings === SubSettings.GROUPING ? (
 						<div className="home-top-bar-display-settings-element-select-area-options">
 							<div
 								className={`home-top-bar-display-settings-element-select-area-option ${
-									Grouping.STATUS == grouping
+									Grouping.STATUS === grouping
 										? "home-top-bar-display-settings-element-select-area-option-selected"
 										: ""
 								}`}
@@ -59,7 +59,7 @@ export default function DisplaySettings({ ordering, setOrdering, grouping, setGr
 							</div>
 							<div
 								className={`home-top-bar-display-settings-element-select-area-option ${
-									Grouping.USER == grouping
+									Grouping.USER === grouping
 										? "home-top-bar-display-settings-element-select-area-option-selected"
 										: ""
 								}`}
@@ -69,7 +69,7 @@ export default function DisplaySettings({ ordering, setOrdering, grouping, setGr
 							</div>
 							<div
 								className={`home-top-bar-display-settings-element-select-area-option ${
-									Grouping.PRIORITY == grouping
+									Grouping.PRIORITY === grouping
 										? "home-top-bar-display-settings-element-select-area-option-selected"
 										: ""
 								}`}
@@ -103,12 +103,12 @@ export default function DisplaySettings({ ordering, setOrdering, grouping, setGr
 							/>
 						</svg>
 					</button>
-					{subSettings == SubSettings.ORDERING ? (
+					{subSettings === SubSettings.ORDERING ? (
 						<div className="home-top-bar-display-settings-element-select-area-options" >
 							<text>Priority</text>
 							<div
 								className={`home-top-bar-display-settings-element-select-area-option ${
-									Ordering.P_ASC == ordering
+									Ordering.P_ASC === ordering
 										? "home-top-bar-display-settings-element-select-area-option-selected"
 										: ""
 								}`}
@@ -118,7 +118,7 @@ export default function DisplaySettings({ ordering, setOrdering, grouping, setGr
 							</div>
 							<div
 								className={`home-top-bar-display-settings-element-select-area-option ${
-									Ordering.P_DESC == ordering
+									Ordering.P_DESC === ordering
 										? "home-top-bar-display-settings-element-select-area-option-selected"
 										: ""
 								}`}
@@ -129,7 +129,7 @@ export default function DisplaySettings({ ordering, setOrdering, grouping, setGr
 							<text>Title</text>
 							<div
 								className={`home-top-bar-display-settings-element-select-area-option ${
-									Ordering.T_ASC == ordering
+									Ordering.T_ASC === ordering
 										? "home-top-bar-display-settings-element-select-area-option-selected"
 										: ""
 								}`}
@@ -139,7 +139,7 @@ export default function DisplaySettings({ ordering, setOrdering, grouping, setGr
 							</div>
 							<div
 								className={`home-top-bar-display-settings-element-select-area-option ${
-									Ordering.T_DESC == ordering
+									Ordering.T_DESC === ordering
 										? "home-top-bar-display-settings-element-select-area-option-selected"
 										: ""
 								}`}

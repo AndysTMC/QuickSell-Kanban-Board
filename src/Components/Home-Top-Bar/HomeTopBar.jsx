@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import DisplaySettings from "../Display-Settings/DisplaySettings";
-import { Ordering, Grouping } from "../../utils/structures";
 import "./home-top-bar.css";
 
 export default function HomeTopBar({ ordering, setOrdering, grouping, setGrouping }) {

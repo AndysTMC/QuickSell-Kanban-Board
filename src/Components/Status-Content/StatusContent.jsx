@@ -1,10 +1,13 @@
 import Card from "../Card/Card";
-import { Grouping } from "../../utils/structures";
-import PriorityIcon from "../Priority-Icon/PriorityIcon";
 import { sortTickets } from "../../utils/functions";
 import StatusIcon from "../Status-Icon/StatusIcon";
 
 export default function StatusContent({ data, ordering, grouping }) {
+	const backlog_tickets = data ? data.tickets?.filter((details) => details.status === "Backlog") : [];
+	const todo_tickets = data ? data.tickets?.filter((details) => details.status === "Todo") : [];
+	const in_progress_tickets = data ? data.tickets?.filter((details) => details.status === "In progress") : [];
+	const done_tickets = data ? data.tickets?.filter((details) => details.status === "Done") : [];
+	const cancelled_tickets = data ? data.tickets?.filter((details) => details.status === "Cancelled") : [];
 	return (
 		<div className="type-content">
 			<div className="content-block">
@@ -12,7 +15,7 @@ export default function StatusContent({ data, ordering, grouping }) {
 					<div className="content-header-left">
 						<StatusIcon status="Backlog" />
 						<text>Backlog</text>
-						<text style={{ opacity: 0.5 }}>5</text>
+						<text style={{ opacity: 0.5 }}>{backlog_tickets.length}</text>
 					</div>
 					<div className="content-header-right">
 						<div className="content-header-add">
@@ -46,9 +49,7 @@ export default function StatusContent({ data, ordering, grouping }) {
 					</div>
 				</div>
 				<div className="content-body">
-                    {data && sortTickets(data.tickets?.filter((details) => (
-                        details.status == "Backlog"
-                    )), ordering).map((details) => (
+                    {data && sortTickets(backlog_tickets, ordering).map((details) => (
                         <Card details={details} grouping={grouping} />
                     ))}
                 </div>
@@ -58,7 +59,7 @@ export default function StatusContent({ data, ordering, grouping }) {
 					<div className="content-header-left">
 						<StatusIcon status="Todo" />
 						<text>Todo</text>
-						<text style={{ opacity: 0.5 }}>5</text>
+						<text style={{ opacity: 0.5 }}>{todo_tickets.length}</text>
 					</div>
 					<div className="content-header-right">
 						<div className="content-header-add">
@@ -92,9 +93,7 @@ export default function StatusContent({ data, ordering, grouping }) {
 					</div>
 				</div>
 				<div className="content-body">
-                    {data && sortTickets(data.tickets?.filter((details) => (
-                        details.status == "Todo"
-                    )), ordering).map((details) => (
+                    {data && sortTickets(todo_tickets, ordering).map((details) => (
                         <Card details={details} grouping={grouping} />
                     ))}
                 </div>
@@ -104,7 +103,7 @@ export default function StatusContent({ data, ordering, grouping }) {
 					<div className="content-header-left">
 						<StatusIcon status="In progress" />
 						<text>In Progress</text>
-						<text style={{ opacity: 0.5 }}>5</text>
+						<text style={{ opacity: 0.5 }}>{in_progress_tickets.length}</text>
 					</div>
 					<div className="content-header-right">
 						<div className="content-header-add">
@@ -138,9 +137,7 @@ export default function StatusContent({ data, ordering, grouping }) {
 					</div>
 				</div>
 				<div className="content-body">
-                    {data && sortTickets(data.tickets?.filter((details) => (
-                        details.status == "In progress"
-                    )), ordering).map((details) => (
+                    {data && sortTickets(in_progress_tickets, ordering).map((details) => (
                         <Card details={details} grouping={grouping} />
                     ))}
                 </div>
@@ -150,7 +147,7 @@ export default function StatusContent({ data, ordering, grouping }) {
 					<div className="content-header-left">
 						<StatusIcon status="Done" />
 						<text>Done</text>
-						<text style={{ opacity: 0.5 }}>5</text>
+						<text style={{ opacity: 0.5 }}>{done_tickets.length}</text>
 					</div>
 					<div className="content-header-right">
 						<div className="content-header-add">
@@ -184,9 +181,7 @@ export default function StatusContent({ data, ordering, grouping }) {
 					</div>
 				</div>
 				<div className="content-body">
-                    {data && sortTickets(data.tickets?.filter((details) => (
-                        details.status == "Done"
-                    )), ordering).map((details) => (
+                    {data && sortTickets(done_tickets, ordering).map((details) => (
                         <Card details={details} grouping={grouping} />
                     ))}
                 </div>
@@ -196,7 +191,7 @@ export default function StatusContent({ data, ordering, grouping }) {
 					<div className="content-header-left">
 						<StatusIcon status="Cancelled" />
 						<text>Cancelled</text>
-						<text style={{ opacity: 0.5 }}>5</text>
+						<text style={{ opacity: 0.5 }}>{cancelled_tickets.length}</text>
 					</div>
 					<div className="content-header-right">
 						<div className="content-header-add">
@@ -230,9 +225,7 @@ export default function StatusContent({ data, ordering, grouping }) {
 					</div>
 				</div>
 				<div className="content-body">
-                    {data && sortTickets(data.tickets?.filter((details) => (
-                        details.status == "Cancelled"
-                    )), ordering).map((details) => (
+                    {data && sortTickets(cancelled_tickets, ordering).map((details) => (
                         <Card details={details} grouping={grouping} />
                     ))}
                 </div>
